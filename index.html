@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(61, 61, 61);
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #121310;
+            color: white;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            padding-right: 40px;
+        }
+
+        .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        .container {
+            padding-top: 80px; /* to make room for the fixed header */
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column; /* Change flex direction to column , to make the buttons on the bottom of the image*/
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: rgb(222,221,228);
+        }
+
+        .profile-section img {
+            flex: 1;
+            max-width: 350px;
+            border-radius: 25%; /*Makes the image round if 50pc*/
+        }
+
+        .profile-buttons {
+            padding-top: 20px;
+            flex: 1;
+            text-align: center;
+            align-items: center;
+        }
+
+        .profile-buttons a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            border: 1px solid white;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .profile-buttons a:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        .about-me {
+            padding: 20px;
+            padding-left: 250px;
+            padding-right: 250px;
+            align-items: center;
+            background-color: rgb(222,221,228);
+            text-align: justify;
+        }
+
+/*CARD AQUI */
+
+        .card-container {
+            width: 300px;
+            height: 100px;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .card {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+        
+        .card .front-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+        }
+        
+        .card .front-content p {
+            font-size: 32px;
+            font-weight: 700;
+            opacity: 1;
+            background: linear-gradient(-45deg,#000000 0%, #434b3c 100% );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+        }
+        
+        .card .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            background: linear-gradient(-65deg, #383b35 0%, #434b3c 100% );
+            color: #e8e8e8;
+            padding: 5px;
+            line-height: 1.5;
+            border-radius: 5px;
+            pointer-events: none;
+            transform: translateX(-96%);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        .card .content .heading {
+            font-size: 30px;
+            font-weight: 700;
+        }
+        
+        .card:hover .content {
+            transform: translateY(0);
+        }
+        
+        .card:hover .front-content {
+            transform: translateX(-30%);
+        }
+        
+        .card:hover .front-content p {
+            opacity: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Portfolio | Cristiano Amorim </h1>
+        <nav class="nav-buttons">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="https://www.linkedin.com/in/cristianoamorim98/" target="_blank">Resume</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="profile-section">
+            <img src="https://media.licdn.com/dms/image/D4D03AQFWkDmoe7UvcA/profile-displayphoto-shrink_800_800/0/1666345884792?e=1724889600&v=beta&t=n1xcYp0MoEGDdK9e7Pw64A1nDuEZ_aJiY3bJkxiolEo" alt="LinkedIn Profile Picture" >
+            <div class="profile-buttons">
+                <a href="#projects">Projects</a>
+                <a href="https://www.linkedin.com/in/cristianoamorim98/">LinkedIn</a>
+                
+            </div>
+        </section>
+        <section id="about" class="about-me" >
+            <h2><b>About Me</b></h2>
+
+        <p style="padding-left: 20px;">
+            I am a dedicated professional with a strong passion for business, fostering robust relationships, and prioritizing customer satisfaction, both internally and externally.<br>
+            <br>Moreover, I am skilled in leveraging Power BI to visualize data insights effectively and drive informed business decisions. I have a proven track record of creating insightful reports and dashboards that provide stakeholders with actionable insights, ultimately contributing to organizational success.<br>
+            <br>Additionally, I possess a keen interest and proficiency in applying machine learning techniques to solve business challenges and improve productivity. My expertise in Python, VBA, and Power Query allows me to tackle complex analytical tasks and automate processes, enabling efficient decision-making and driving operational excellence.<br>
+            <br>My versatility and background empower me to leverage business acumen effectively, driving business innovation and enhancing customer relations. I excel in analyzing complex issues, simplifying them, and consistently striving for improvement to deliver impactful results across diverse industries.<br>
+        </p>
+        </section>
+        
+        <section id="projects" style="background-color:rgb(178, 178, 180); padding-top: 20px ;">
+            <h2 style="font-size: xx-large; text-align: center">Projects</h2>
+            <hr></hr>
+
+            <h3 style="font-size: x-large;padding-left: 20px">Data Science - Deep Learning CNN</h3>
+            <div class="container" , style="display: flex; flex-direction: row;padding: 20px;">
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p>Digit Recognizer</p>
+                        </div>
+                        <div class="content">
+                            CNN for Digit Recognizer
+                        </div>
+                    </a>
+                    </div>
+                </div>                
+
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p>Super Car Logo</p>
+                        </div>
+                        <div class="content">
+                            CNN for Supercar Logos
+                        </div>
+                    </a>
+                    </div>
+                </div>   
+                
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p>Object Detection</p>
+                        </div>
+                        <div class="content">
+                            Mobilenet pre-trained model for Object Detection
+                        </div>
+                    </a>
+                    </div>
+                </div>
+            </div> 
+
+            <h3 style="font-size: x-large; padding-left: 20px;">Data Science - Exploratory Data Analysis</h3>
+            <div class="container" , style="display: flex; flex-direction: row;padding: 20px;">
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p>Titanic</p>
+                        </div>
+                        <div class="content">
+                            Begginer Titanic Dataset from Kaggle
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p>Iris</p>
+                        </div>
+                        <div class="content">
+                            Academic Dataset from Plant 
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p>Travel Salesman</p>
+                        </div>
+                        <div class="content">
+                            Berlin-52 Travel Salesman
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p> MF Optimization</p>
+                        </div>
+                        <div class="content">
+                            Business Analytics for Production Optimization due to several Factors as Raw Materials, Energy, HC,etc.
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 style="font-size: x-large; padding-left: 20px;">Data Science - Data Visualisation</h3>
+            <div class="container" , style="display: flex; flex-direction: row;padding: 20px;">
+                <div class="card-container">
+                    <div class="card">
+                    <a href="https://github.com/Amorim222/Data-Science-Dossier/tree/main" target="_blank" style="text-decoration: none; color: inherit;">
+                        <div class="front-content">
+                        <p> PBI | OLIST</p>
+                        </div>
+                        <div class="content">
+                            Kaggle dataset on Power BI
+                        </div>
+                    </a>
+                    </div>
+                </div>
+
+            </div>   
+
+            <hr></hr>          
+            <h3 style="font-size: x-large">Accounting & Finance </h3> <i>[under construction]</i>
+            
+            <hr></hr>
+
+                
+            
+        </section>
+    </div>
+</body>
+
+
+
+
+</html>
